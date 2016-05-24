@@ -3,7 +3,7 @@ package com.cy.changyoutianxia;
 import android.os.Bundle;
 import android.app.Activity;
 
-public class MainActivity extends Activity {
+public class Neimenggu extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
