@@ -21,4 +21,6 @@
     <style name="FullScreen" parent="android:Theme.Black.NoTitleBar.Fullscreen"/>
     <style name="FullScreen_Wallpaper" parent="android:Theme.Wallpaper.NoTitleBar.Fullscreen"/>
     
+    
+
 </resources>
