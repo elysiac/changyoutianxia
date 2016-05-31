@@ -1,0 +1,29 @@
+数据库表
+train_list表
+id 
+checi 车次
+type 列车类型
+from 始发站
+to 终点站
+duration 运行时间 xhx
+mileage 里程
+
+
+
+train表
+id
+checi 车次
+type 列车类型
+station 车站
+order 站序
+day 天数
+arrive_time 到达时间（-）
+leave_time 开车时间（-）
+stay_time 停车时间（0）
+duration 运行时间（从始发站）（0）
+mileage 里程（从始发站）（0）
+second_seat 硬座（二等座）（-）
+first_seat 软座（一等座）（-）
+second_bed 硬卧（上/中/下）（-）
+first_bed 软卧（上/下）（-）
+
