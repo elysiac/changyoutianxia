@@ -25,16 +25,29 @@ public final class R {
         public static final int china1=0x7f020001;
         public static final int china2=0x7f020002;
         public static final int china_gp=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
+        public static final int htj=0x7f020004;
+        public static final int ic_launcher=0x7f020005;
+        public static final int menu_bk=0x7f020006;
+        public static final int search=0x7f020007;
+        public static final int shape=0x7f020008;
     }
     public static final class id {
+        public static final int checiList=0x7f070004;
+        public static final int fromTo=0x7f070006;
+        public static final int listLay=0x7f070002;
+        public static final int listLay_in=0x7f070003;
         public static final int mainbg=0x7f070000;
+        public static final int searchField=0x7f070001;
+        public static final int title=0x7f070005;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int activity_neimenggu=0x7f030001;
+        public static final int checi_list=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f050000;
+        public static final int htj_info=0x7f050001;
     }
     public static final class style {
         /** 
