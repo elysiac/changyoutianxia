@@ -47,6 +47,13 @@ public final class R {
     }
     public static final class string {
         public static final int app_name=0x7f050000;
+        public static final int app_runn_mode=0x7f050002;
+        /**  应用程序运行模式：0.开发；1.发布 
+         */
+        public static final int db_name=0x7f050003;
+        /**  数据库名称 
+         */
+        public static final int db_version=0x7f050004;
         public static final int htj_info=0x7f050001;
     }
     public static final class style {
