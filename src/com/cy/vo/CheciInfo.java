@@ -22,6 +22,11 @@ public class CheciInfo {
 		this.context = context;
 		dataTable="train_list";
 	}
+	public List<CheciVo> getInfoAll(){
+		String sql = "select * from "+dataTable;
+		return getInformation(sql);
+	}
+	
 	public List<CheciVo> getInfoByCheci(String checi){
 		String sql = "select * from "+dataTable+" where CHECI like '%"+checi+"%'";
 		return getInformation(sql);

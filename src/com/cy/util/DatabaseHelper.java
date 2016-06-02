@@ -38,23 +38,23 @@ public class DatabaseHelper{
 		//判断数据库文件是否存在,如果存在删除目标数据库
 		File dbFile = new File(dbPath + "/" + NAME);
 		//数据库存在
-		if (dbFile.exists()) {
-			//数据库是否需要更新
-			if(checkDataBase()){
-				dbFile.delete();
-				this.copyDataBase();
-//				copyDataBaseFromInet();
-			}else{
-				if(APP_RUN_MODE==0){
-					dbFile.delete();
-					this.copyDataBase();
-//					copyDataBaseFromInet();
-				}
-			}
-		}else{
-			this.copyDataBase();
-//			copyDataBaseFromInet();
-		}
+//		if (dbFile.exists()) {
+//			//数据库是否需要更新
+//			if(checkDataBase()){
+//				dbFile.delete();
+//				this.copyDataBase();
+//			}else{
+//				if(APP_RUN_MODE==0){
+//					dbFile.delete();
+//					this.copyDataBase();
+//				}
+//			}
+//		}else{
+//			this.copyDataBase();
+//		}
+		
+		dbFile.delete();
+		this.copyDataBase();
 	}
 
 	/**

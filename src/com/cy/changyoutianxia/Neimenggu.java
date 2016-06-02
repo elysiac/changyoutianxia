@@ -36,6 +36,11 @@ public class Neimenggu extends Activity {
 		checiList = (ListView)findViewById(R.id.checiList);
 		checiInfo = new CheciInfo(Neimenggu.this);
 		searchField =(CleanEditTextContent)findViewById(R.id.searchField);
+		searchField.setOnEditorActionListener(onEditorActionListener);
+		listmap = checiInfo.getInfoAll();
+		checiList.postInvalidate();
+		ListViewAdapter listViewAdapter = new ListViewAdapter(Neimenggu.this); 
+		checiList.setAdapter(listViewAdapter);
 	}
 
 	private OnEditorActionListener onEditorActionListener = new OnEditorActionListener() {

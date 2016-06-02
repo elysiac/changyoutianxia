@@ -12,6 +12,7 @@
                 android:layout_width="fill_parent"
                 android:layout_height="250dp">         
                 <Button
+                    android:id="@+id/nmg_btn"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:background="@drawable/china_gp"

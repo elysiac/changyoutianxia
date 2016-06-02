@@ -13,7 +13,7 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:src="@drawable/htj"
-            />  "
+            />  
         <TextView 
             android:layout_height="fill_parent"
             android:layout_width="fill_parent"
@@ -54,7 +54,6 @@
         android:id="@+id/listLay_in"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
         android:orientation="horizontal"
         >
         <ListView
