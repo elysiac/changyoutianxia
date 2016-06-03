@@ -13,6 +13,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -20,6 +22,7 @@ import android.widget.Toast;
 import android.widget.TextView.OnEditorActionListener;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 
 public class Neimenggu extends Activity {
 	ListView checiList;
@@ -41,6 +44,20 @@ public class Neimenggu extends Activity {
 		checiList.postInvalidate();
 		ListViewAdapter listViewAdapter = new ListViewAdapter(Neimenggu.this); 
 		checiList.setAdapter(listViewAdapter);
+		
+		checiList.setOnItemClickListener(new OnItemClickListener(){
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				int index=(Integer)arg1.getTag();
+				CheciVo checiVo = listmap.get(index);
+				String checiName = checiVo.getCheci();
+				Intent intent = new Intent();
+				intent.putExtra("checi", checiName);
+				intent.setClass(Neimenggu.this, CheciItemActivity.class);
+				Neimenggu.this.startActivity(intent);
+			}
+		});
 	}
 
 	private OnEditorActionListener onEditorActionListener = new OnEditorActionListener() {
@@ -108,4 +125,6 @@ public class Neimenggu extends Activity {
 			return convertView;   
 		} 
 	}
+	
+	
 }

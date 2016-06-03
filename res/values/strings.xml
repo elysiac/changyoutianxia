@@ -10,4 +10,14 @@
     <!-- 数据库名称 -->
     <string name="db_version">0</string>
     <!-- 数据库版本 -->
+    
+    <!-- 动车停车站从东向西 -->
+    <string name="station1">集宁南</string>
+    <string name="station2">卓资东</string>
+    <string name="station3">呼和浩特东</string>
+    <string name="station4">呼和浩特</string>
+    <string name="station5">萨拉齐</string>
+    <string name="station6">包头东</string>
+    <string name="station7">包头</string>
+    <string name="station8">鄂尔多斯</string>
 </resources>

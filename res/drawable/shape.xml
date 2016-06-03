@@ -4,7 +4,7 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 android:shape="rectangle"
 android:padding="10dp"> <!--设置形状为矩形 -->
 <!-- 填充的颜色 -->
-<solid android:color="#c6e1f6"/>
+<solid android:color="#ffffff"/>
 <!-- 设置矩形的四个角为弧形 -->
 <!-- radius为弧形的半径 -->
 <corners android:radius="16dip"/>

@@ -28,7 +28,7 @@ public class MainActivity extends Activity {
 		MainActivity.activityList.add(MainActivity.this);
 		mainLayout = (LinearLayout) findViewById(R.id.mainbg);
 		mainLayout.setBackgroundDrawable(imUtil.getBitFromInner(
-				MainActivity.this, R.drawable.bg));
+				MainActivity.this, R.drawable.bg2));
 		Button nmg_btn;
 		nmg_btn=(Button)findViewById(R.id.nmg_btn);
 		nmg_btn.setOnClickListener(new android.view.View.OnClickListener() {

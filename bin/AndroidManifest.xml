@@ -55,6 +55,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/NoTitleBar" >
         </activity>
+        <activity
+            android:name="com.cy.changyoutianxia.CheciItemActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.cy.changyoutianxia.StationActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/NoTitleBar" >
+        </activity>
     </application>
 
 </manifest>
