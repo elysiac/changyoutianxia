@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">行游天下</string>
+    <string name="app_name">游行天下</string>
     <string name="htj_info">呼和浩特铁路局地处内蒙古自治区中西部，内连西北、华北、东北地区，外接蒙古国、俄罗斯及东欧国家，承担着服务边疆草原、稳固祖国北部边疆的的重要任务.</string>
 
     <string name="app_runn_mode">0</string>
@@ -11,7 +11,7 @@
     <string name="db_version">0</string>
     <!-- 数据库版本 -->
     
-    <!-- 动车停车站从东向西 -->
+    <!-- 动车停车站从东向西 (没用)-->
     <string name="station1">集宁南</string>
     <string name="station2">卓资东</string>
     <string name="station3">呼和浩特东</string>
@@ -20,4 +20,9 @@
     <string name="station6">包头东</string>
     <string name="station7">包头</string>
     <string name="station8">鄂尔多斯</string>
+    
+    <!-- 停车站的menu列表-->
+    <string name="menu1">车次详情</string>
+    <string name="menu2">车站介绍</string>
+    <string name="menu3">旅游信息</string>
 </resources>

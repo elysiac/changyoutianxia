@@ -26,27 +26,27 @@ import com.cy.vo.CheciVo;
 
 public class CheciItemActivity extends Activity {
 	ListView checiList;
-	private List<CheciVo> listmap=new ArrayList<CheciVo>();
-	private boolean isCheci=true;
 	CheciInfo checiInfo;
 	CleanEditTextContent searchField;
 	LinearLayout whole;
 	int screenHeight;
 	List<RelativeLayout> menus = new ArrayList<RelativeLayout>();
 	List<View> views = new ArrayList<View>();
-	int ii=0;
+	List<CheciItemVo> listCheciItemVo;
+	List<String> stationNames;
+	String checi;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		MainActivity.activityList.add(CheciItemActivity.this);
 		setContentView(R.layout.activity_checiitem);
 		Intent intent=this.getIntent();
-		String checi = intent.getStringExtra("checi");
-		List<CheciItemVo> listCheciItemVo = new ArrayList<CheciItemVo>();
+		checi = intent.getStringExtra("checi");
+		listCheciItemVo = new ArrayList<CheciItemVo>();
+		stationNames = new ArrayList<String>();
 		CheciInfo checiInfo = new CheciInfo(CheciItemActivity.this);
 		listCheciItemVo = checiInfo.getCheciItem(checi);
 		whole = (LinearLayout)findViewById(R.id.whole);
-		
 		WindowManager windowManager = getWindowManager();    
         Display display = windowManager.getDefaultDisplay();    
 //        int screenWidth = display.getWidth();    
@@ -55,24 +55,71 @@ public class CheciItemActivity extends Activity {
 		for(int i=0;i<listCheciItemVo.size();i++){
 			LayoutInflater listContainer = LayoutInflater.from(this);  
 			View convertView = listContainer.inflate(R.layout.checi_item_list, null); 
-			TextView station = (TextView)convertView.findViewById(R.id.station1);
-			station.setText(listCheciItemVo.get(i).getStation());
-			RelativeLayout menu = (RelativeLayout)convertView.findViewById(R.id.menu);
-			menus.add(menu);
+			TextView station = (TextView)convertView.findViewById(R.id.station);
+			String stationName = listCheciItemVo.get(i).getStation();
+			station.setText(stationName);
+			TextView menustationname1 = (TextView)convertView.findViewById(R.id.menustationname1);
+			TextView menustationname2 = (TextView)convertView.findViewById(R.id.menustationname2);
+			TextView menustationname3 = (TextView)convertView.findViewById(R.id.menustationname3);
+			menustationname1.setText(stationName);
+			menustationname2.setText(stationName);
+			menustationname3.setText(stationName);
+//			stationNames.add(stationName);
 			convertView.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT, screenHeight/listCheciItemVo.size()));
 			views.add(convertView);
 			whole.addView(convertView);
 		}
 		for(int i=0;i<listCheciItemVo.size();i++){
-			
 			views.get(i).setOnClickListener(new android.view.View.OnClickListener() {
-				
 				public void onClick(View v) {
-//					Intent intent = new Intent(CheciItemActivity.this,StationActivity.class);
-//					startActivity(intent);
-					menus.get(ii).setVisibility(View.VISIBLE);
+					for(int i=0;i<listCheciItemVo.size();i++){
+						RelativeLayout menu = (RelativeLayout)views.get(i).findViewById(R.id.menu);
+						menu.setVisibility(View.GONE);
+					}
+					RelativeLayout menu = (RelativeLayout)v.findViewById(R.id.menu);
+					if(menu.getVisibility()==View.VISIBLE){
+						menu.setVisibility(View.GONE);
+					}
+					else{
+						menu.setVisibility(View.VISIBLE);
+					}
 				}
 			});
+			
+			LinearLayout menu1 = (LinearLayout)views.get(i).findViewById(R.id.menu1);
+			LinearLayout menu2 = (LinearLayout)views.get(i).findViewById(R.id.menu2);
+			LinearLayout menu3 = (LinearLayout)views.get(i).findViewById(R.id.menu3);
+			menu1.setOnClickListener(new android.view.View.OnClickListener() {
+				public void onClick(View v) {
+					TextView menustationname1 = (TextView)v.findViewById(R.id.menustationname1);
+					String stationName = menustationname1.getText().toString();
+					Intent intent = new Intent(CheciItemActivity.this,StationActivity.class);
+					intent.putExtra("checi", checi);
+					intent.putExtra("stationName", stationName);
+					startActivity(intent);
+				}
+			});
+			menu2.setOnClickListener(new android.view.View.OnClickListener() {
+				public void onClick(View v) {
+					TextView menustationname1 = (TextView)v.findViewById(R.id.menustationname2);
+					String stationName = menustationname1.getText().toString();
+					Intent intent = new Intent(CheciItemActivity.this,StationActivity.class);
+					intent.putExtra("checi", checi);
+					intent.putExtra("stationName", stationName);
+					startActivity(intent);
+				}
+			});
+			menu3.setOnClickListener(new android.view.View.OnClickListener() {
+				public void onClick(View v) {
+					TextView menustationname1 = (TextView)v.findViewById(R.id.menustationname3);
+					String stationName = menustationname1.getText().toString();
+					Intent intent = new Intent(CheciItemActivity.this,StationActivity.class);
+					intent.putExtra("checi", checi);
+					intent.putExtra("stationName", stationName);
+					startActivity(intent);
+				}
+			});
+			
 		}
 		
 	}

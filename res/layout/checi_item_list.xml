@@ -25,10 +25,10 @@
             android:layout_centerInParent="true"
             />
             <TextView 
-                android:id="@+id/station1"
-                android:layout_toRightOf="@+id/dot1"
+                android:id="@+id/station"
+                android:layout_toLeftOf="@+id/dot1"
                 android:text="@string/station1"
-                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -37,33 +37,104 @@
                 />
             <RelativeLayout 
                 android:id="@+id/menu"
-                android:layout_toLeftOf="@+id/dot1"
-                android:layout_marginRight="20dp"
+                android:layout_toRightOf="@+id/dot1"
+                android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:visibility="gone"
                 >
-                <ImageView 
-                    android:layout_width="20dp"
+                <LinearLayout 
+                    android:layout_width="wrap_content"
                     android:layout_height="20dp"
-                    android:src="@drawable/dot"
+                    android:orientation="horizontal"
                     android:layout_alignParentTop="true"
                     android:layout_marginTop="5dp"
-                    />
-                <ImageView 
+                    android:id="@+id/menu1"
+                    >
+                    <ImageView 
                     android:layout_width="20dp"
                     android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
                     android:src="@drawable/dot"
+                    />
+                    <TextView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/menu1"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        />
+                    <TextView 
+                        android:id="@+id/menustationname1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="123"
+                        android:visibility="gone"
+                        />
+                </LinearLayout>
+                <LinearLayout 
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:orientation="horizontal"
                     android:layout_centerVertical="true"
-                    />
-                <ImageView 
+                    android:id="@+id/menu2"
+                    >
+                    <ImageView 
                     android:layout_width="20dp"
                     android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
                     android:src="@drawable/dot"
+                    />
+                    <TextView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/menu2"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        />
+                    <TextView 
+                        android:id="@+id/menustationname2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="123"
+                        android:visibility="gone"
+                        />
+                </LinearLayout>
+                <LinearLayout 
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:orientation="horizontal"
                     android:layout_alignParentBottom="true"
                     android:layout_marginBottom="5dp"
+                    android:id="@+id/menu3"
+                    >
+                    <ImageView 
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/dot"
                     />
-                
+                    <TextView 
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:text="@string/menu3"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        />
+                    <TextView 
+                        android:id="@+id/menustationname3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="123"
+                        android:visibility="gone"
+                        />
+                </LinearLayout>
             </RelativeLayout>
             
         </RelativeLayout>

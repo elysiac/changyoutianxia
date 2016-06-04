@@ -27,48 +27,54 @@ public final class R {
     public static final class drawable {
         public static final int bg=0x7f020000;
         public static final int bg2=0x7f020001;
-        public static final int black=0x7f020011;
-        public static final int blue=0x7f020012;
+        public static final int black=0x7f020012;
+        public static final int blue=0x7f020013;
         public static final int china1=0x7f020002;
         public static final int china2=0x7f020003;
         public static final int china_gp=0x7f020004;
-        public static final int cyan=0x7f020013;
-        public static final int darkgray=0x7f02000f;
-        public static final int dkgray=0x7f02000c;
+        public static final int cyan=0x7f020014;
+        public static final int darkgray=0x7f020010;
+        public static final int dkgray=0x7f02000d;
         public static final int dot=0x7f020005;
-        public static final int gray=0x7f020014;
-        public static final int green=0x7f020015;
+        public static final int gray=0x7f020015;
+        public static final int green=0x7f020016;
         public static final int htj=0x7f020006;
         public static final int ic_launcher=0x7f020007;
-        public static final int lightgreen=0x7f020010;
+        public static final int lightgreen=0x7f020011;
         public static final int line=0x7f020008;
-        public static final int ltgray=0x7f020016;
-        public static final int magenta=0x7f020017;
+        public static final int ltgray=0x7f020017;
+        public static final int magenta=0x7f020018;
         public static final int menu_bk=0x7f020009;
-        public static final int my_yellow=0x7f02001b;
-        public static final int red=0x7f020018;
+        public static final int my_yellow=0x7f02001c;
+        public static final int red=0x7f020019;
         public static final int search=0x7f02000a;
         public static final int shape=0x7f02000b;
-        public static final int transparent=0x7f020019;
-        public static final int white=0x7f02000e;
-        public static final int yello=0x7f02000d;
-        public static final int yellow=0x7f02001a;
+        public static final int train=0x7f02000c;
+        public static final int transparent=0x7f02001a;
+        public static final int white=0x7f02000f;
+        public static final int yello=0x7f02000e;
+        public static final int yellow=0x7f02001b;
     }
     public static final class id {
-        public static final int all=0x7f080009;
-        public static final int checiList=0x7f080007;
-        public static final int dot1=0x7f08000a;
-        public static final int fromTo=0x7f08000e;
-        public static final int listLay=0x7f080005;
-        public static final int listLay_in=0x7f080006;
-        public static final int mainbg=0x7f080002;
-        public static final int menu=0x7f08000c;
-        public static final int nmg_btn=0x7f080003;
-        public static final int searchField=0x7f080004;
-        public static final int station1=0x7f08000b;
-        public static final int stationList=0x7f080001;
-        public static final int title=0x7f08000d;
-        public static final int welcomeLayout=0x7f080008;
+        public static final int all=0x7f080008;
+        public static final int checiList=0x7f080006;
+        public static final int dot1=0x7f080009;
+        public static final int fromTo=0x7f080013;
+        public static final int listLay=0x7f080004;
+        public static final int listLay_in=0x7f080005;
+        public static final int mainbg=0x7f080001;
+        public static final int menu=0x7f08000b;
+        public static final int menu1=0x7f08000c;
+        public static final int menu2=0x7f08000e;
+        public static final int menu3=0x7f080010;
+        public static final int menustationname1=0x7f08000d;
+        public static final int menustationname2=0x7f08000f;
+        public static final int menustationname3=0x7f080011;
+        public static final int nmg_btn=0x7f080002;
+        public static final int searchField=0x7f080003;
+        public static final int station=0x7f08000a;
+        public static final int title=0x7f080012;
+        public static final int welcomeLayout=0x7f080007;
         public static final int whole=0x7f080000;
     }
     public static final class layout {
@@ -90,8 +96,13 @@ public final class R {
          */
         public static final int db_version=0x7f060004;
         public static final int htj_info=0x7f060001;
+        /**  停车站的menu列表
+         */
+        public static final int menu1=0x7f06000d;
+        public static final int menu2=0x7f06000e;
+        public static final int menu3=0x7f06000f;
         /**  数据库版本 
- 动车停车站从东向西 
+ 动车停车站从东向西 (没用)
          */
         public static final int station1=0x7f060005;
         public static final int station2=0x7f060006;

@@ -5,17 +5,27 @@
     android:scrollbars="vertical"
     android:background="#eae4d8"
     >
-    <LinearLayout 
+    <RelativeLayout 
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/whole"
+        android:layout_height="wrap_content" 
         >
-        <ListView
-            android:id="@+id/stationList"
+        
+        <LinearLayout 
+            android:layout_alignParentTop="true"
             android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/whole"
+            >   
+        </LinearLayout>
+        <ImageView 
+            android:layout_width="40dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/train"
             />
-    </LinearLayout>
+    </RelativeLayout>
+    
     
 
 </ScrollView>
