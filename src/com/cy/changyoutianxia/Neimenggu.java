@@ -33,7 +33,7 @@ public class Neimenggu extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		MainActivity.activityList.add(Neimenggu.this);
+		GroupActivity.activityList.add(Neimenggu.this);
 		setContentView(R.layout.activity_neimenggu);
 		
 		checiList = (ListView)findViewById(R.id.checiList);
@@ -126,5 +126,20 @@ public class Neimenggu extends Activity {
 		} 
 	}
 	
-	
+	/**
+ 	 * 键盘事件
+ 	 */
+ 	public boolean onKeyDown(int keyCode, KeyEvent event) {
+ 		// 返回事件
+ 		if (keyCode == KeyEvent.KEYCODE_BACK) {
+ 			Intent intent = new Intent();
+			intent.setClass(Neimenggu.this, GroupActivity.class);
+			Neimenggu.this.startActivity(intent);
+			overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right); 
+ 			return true;
+ 		} else {
+ 			return super.onKeyDown(keyCode, event);
+ 		}
+ 	}
+
 }

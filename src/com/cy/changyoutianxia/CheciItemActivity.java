@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Display;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -38,7 +39,7 @@ public class CheciItemActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		MainActivity.activityList.add(CheciItemActivity.this);
+		GroupActivity.activityList.add(CheciItemActivity.this);
 		setContentView(R.layout.activity_checiitem);
 		Intent intent=this.getIntent();
 		checi = intent.getStringExtra("checi");
@@ -123,5 +124,6 @@ public class CheciItemActivity extends Activity {
 		}
 		
 	}
+	
 
 }

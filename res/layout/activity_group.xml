@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent" android:orientation="vertical"
+    android:layout_height="fill_parent">
+    
+    <!-- 中间动态加载View -->
+    <ScrollView android:measureAllChildren="true" android:id="@+id/containerBody"
+        android:layout_weight="1" android:layout_height="fill_parent"
+        android:layout_width="fill_parent">
+    </ScrollView>
+    <LinearLayout android:background="@drawable/menu_bk"
+        android:layout_gravity="bottom" android:orientation="horizontal"
+        android:layout_width="fill_parent" android:layout_height="50dp">
+        <!-- 功能模块按钮1 -->
+        <LinearLayout 
+            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:id="@+id/btnModule1"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="地区查询"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_height="fill_parent"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:id="@+id/btnModule2"
+            >
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="实时导航"
+                android:textColor="#000000"
+                android:textSize="14sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

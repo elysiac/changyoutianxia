@@ -11,7 +11,7 @@ public class StationActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		MainActivity.activityList.add(StationActivity.this);
+		GroupActivity.activityList.add(StationActivity.this);
 		setContentView(R.layout.activity_station);
 		Intent intent=this.getIntent();
 		checi = intent.getStringExtra("checi");

@@ -44,7 +44,7 @@ public class WelcomeActivity extends Activity {
 		animation.setAnimationListener(new AnimationListener() {
 			public void onAnimationEnd(Animation animation) {
 				initData();
-				Intent intent = new Intent(WelcomeActivity.this,MainActivity.class);
+				Intent intent = new Intent(WelcomeActivity.this,GroupActivity.class);
 				startActivity(intent);
 				finish();
 				overridePendingTransition(R.anim.fade, R.anim.hold);
