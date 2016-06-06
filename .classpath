@@ -8,5 +8,6 @@
 	<classpathentry kind="lib" path="libs/baidumapapi_v3_4_0.jar"/>
 	<classpathentry kind="lib" path="libs/gson-2.1.jar"/>
 	<classpathentry kind="lib" path="libs/locSDK_5.0.jar"/>
+	<classpathentry kind="lib" path="libs/BaiduLBS_Android.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
