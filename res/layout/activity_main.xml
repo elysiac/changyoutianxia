@@ -1,21 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/mainbg"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical">
+        android:background="#eff2f7">
         <LinearLayout 
                 android:layout_width="fill_parent"
-                android:layout_height="200dp">              
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:id="@+id/title"
+                android:background="@drawable/title"
+                android:orientation="horizontal"
+                >              
         </LinearLayout> 
-        <LinearLayout 
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/title"
+            android:layout_above="@+id/bttom_btn"
+            >
+            <LinearLayout 
                 android:layout_width="fill_parent"
-                android:layout_height="250dp">         
+                android:layout_height="250dp"
+                android:layout_centerInParent="true">         
                 <Button
                     android:id="@+id/nmg_btn"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:background="@drawable/china_gp"
                     />     
-        </LinearLayout> 
-</LinearLayout>
+            </LinearLayout> 
+          
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:id="@+id/bttom_btn"
+            >
+            <Button 
+                android:id="@+id/nmg_btn2"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/my_btn_gp"
+                android:text="内蒙古自治区"
+                android:textSize="16sp"
+                android:textColor="#353130"
+                />
+        </RelativeLayout>
+</RelativeLayout>

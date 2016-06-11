@@ -1,16 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent" android:orientation="vertical"
-    android:layout_height="fill_parent">
-    
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#353130">
+    <LinearLayout 
+                android:layout_width="fill_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:id="@+id/title"
+                android:background="@drawable/title"
+                android:orientation="horizontal"
+                >              
+    </LinearLayout> 
     <!-- 中间动态加载View -->
-    <ScrollView android:measureAllChildren="true" android:id="@+id/containerBody"
-        android:layout_weight="1" android:layout_height="fill_parent"
-        android:layout_width="fill_parent">
-    </ScrollView>
-    <LinearLayout android:background="@drawable/menu_bk"
-        android:layout_gravity="bottom" android:orientation="horizontal"
-        android:layout_width="fill_parent" android:layout_height="50dp">
+    <LinearLayout
+        android:id="@+id/containerBody"
+        android:orientation="vertical"
+        android:layout_height="fill_parent"
+        android:layout_width="fill_parent"
+        android:gravity="center"
+        android:layout_below="@+id/title"
+        android:layout_above="@+id/bottom"
+        android:background="#eff2f7"
+        >
+    </LinearLayout>
+    <LinearLayout 
+        android:id="@+id/bottom"
+        android:background="@drawable/menu_bk"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent" 
+        android:layout_height="50dp">
         <!-- 功能模块按钮1 -->
         <LinearLayout 
             android:layout_height="fill_parent"
@@ -20,12 +40,20 @@
             android:gravity="center"
             android:id="@+id/btnModule1"
             >
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/intro"
+                android:id="@+id/intro_im"
+                />
+                
             <TextView 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="地区查询"
+                android:text="游览介绍"
                 android:textColor="#000000"
                 android:textSize="14sp"
+                android:layout_marginLeft="5dp"
                 />
         </LinearLayout>
         <LinearLayout 
@@ -36,13 +64,20 @@
             android:gravity="center"
             android:id="@+id/btnModule2"
             >
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/guide"
+                android:id="@+id/intro_im"
+                />
             <TextView 
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="实时导航"
+                android:text="列车导航"
                 android:textColor="#000000"
                 android:textSize="14sp"
+                android:layout_marginLeft="5dp"
                 />
         </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

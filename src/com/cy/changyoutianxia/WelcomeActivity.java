@@ -19,6 +19,7 @@ public class WelcomeActivity extends Activity {
 	private LinearLayout welcomeLayout;
 //	Bitmap img;
 //	Canvas c;
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_welcome);
@@ -42,16 +43,19 @@ public class WelcomeActivity extends Activity {
 		AlphaAnimation animation = new AlphaAnimation(1.0f, 1.0f);
 		animation.setDuration(3000);
 		animation.setAnimationListener(new AnimationListener() {
+			@Override
 			public void onAnimationEnd(Animation animation) {
 				initData();
-				Intent intent = new Intent(WelcomeActivity.this,GroupActivity.class);
+				Intent intent = new Intent(WelcomeActivity.this,MainActivity.class);
 				startActivity(intent);
 				finish();
 				overridePendingTransition(R.anim.fade, R.anim.hold);
 			}
 			
+			@Override
 			public void onAnimationStart(Animation animation) {}
 			
+			@Override
 			public void onAnimationRepeat(Animation animation) {}
 		});
 		welcomeLayout.setAnimation(animation);
@@ -60,6 +64,7 @@ public class WelcomeActivity extends Activity {
 	/**
 	 * 返回按键事件
 	 */
+	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if(keyCode == KeyEvent.KEYCODE_BACK){
 			return true;
@@ -80,6 +85,7 @@ public class WelcomeActivity extends Activity {
         new DatabaseHelper(WelcomeActivity.this).createDatabase();
 	}
 	
+	@Override
 	protected void onDestroy() {
 		welcomeLayout.setBackgroundDrawable(null);
 		super.onDestroy();

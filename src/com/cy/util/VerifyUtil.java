@@ -52,12 +52,14 @@ public class VerifyUtil {
 		ab.setTitle("无法连接网络，请检查网络配置");
 //		ab.setMessage("无法连接网络，请检查网络配置");
 		ab.setNegativeButton("退出", new OnClickListener() {
+			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.cancel();
 				((Activity)context).finish();
 			}
 		});
 		ab.setPositiveButton("配置", new OnClickListener() {
+			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.cancel();
 				context.startActivity(new Intent(android.provider.Settings.ACTION_DATA_ROAMING_SETTINGS));//ACTION_WIRELESS_SETTINGS
@@ -75,12 +77,14 @@ public class VerifyUtil {
 		ab.setTitle("请在设置中开启GSP");
 		//		ab.setMessage("无法连接网络，请检查网络配置");
 		ab.setNegativeButton("取消", new OnClickListener() {
+			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.cancel();
 				((Activity)context).finish();
 			}
 		});
 		ab.setPositiveButton("配置", new OnClickListener() {
+			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.cancel();
 				context.startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
