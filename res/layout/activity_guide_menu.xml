@@ -47,7 +47,7 @@
                     <TextView 
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="演示导航"
+                        android:text="周边查询"
                         android:layout_gravity="center_vertical"
                         android:layout_marginLeft="30dp"
                         android:textSize="20sp"

@@ -47,6 +47,8 @@ import com.cy.util.MapUtil;
 import com.cy.util.MyApplication;
 import com.cy.util.MyDialog;
 import com.cy.util.MyParameters;
+import com.cy.vo.CityInfo;
+import com.cy.vo.CityVo;
 
 public class GuideMainActivity extends Activity {
 	/**
@@ -80,6 +82,8 @@ public class GuideMainActivity extends Activity {
     //方向传感器
     private Sensor accelerometer; // 加速度传感器
     private Sensor magnetic; // 地磁场传感器
+    
+    List<CityVo> listCityVo= new ArrayList<CityVo>();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -89,9 +93,7 @@ public class GuideMainActivity extends Activity {
         mBaiduMap = mMapView.getMap();
 		mBaiduMap.setMapType(BaiduMap.MAP_TYPE_NORMAL);
 		mCurrentMode = LocationMode.NORMAL;
-		 mBaiduMap
-         .setMyLocationConfigeration(new MyLocationConfiguration(
-                 mCurrentMode, true, null));
+		mBaiduMap.setMyLocationConfigeration(new MyLocationConfiguration(mCurrentMode, true, null));
 		mBaiduMap.setMapStatus(MapStatusUpdateFactory.zoomTo(15));
 		locationService = ((MyApplication) getApplication()).locationService;
 		LocationClientOption mOption = locationService.getDefaultLocationClientOption();
@@ -136,6 +138,11 @@ public class GuideMainActivity extends Activity {
 			}
 		});
       	map_text.setText("正在定位，请稍后");
+      	
+      	//数据库，所有城市
+      	CityInfo cityInfo = new CityInfo(this);
+      	listCityVo = cityInfo.getCityAll();
+      	
 	}
 	{
 //	public void initOverlay() {
@@ -420,7 +427,7 @@ public class GuideMainActivity extends Activity {
 							map_text.setText("正在定位，请稍后");
 						}
 						else if(distance>=300000){
-							map_text.setText("您已超出现有车次范围");
+							map_text.setText("您已超出现有车次覆盖范围");
 						}
 						else if(distance<300000&&distance>rage){
 							map_text.setText("当前位置距离"+cityName+"站还有"+distance+"公里");
@@ -432,7 +439,12 @@ public class GuideMainActivity extends Activity {
 							//弹出提示窗口
 				        	if(shouldOpen&&!isOpen){
 				        		MyDialog.Builder builder = new MyDialog.Builder(GuideMainActivity.this);
-				        		String note = "距离"+cityName+"还有"+distance+"公里";
+				        		String note = "距离"+cityName+"站还有"+distance+"公里";
+				        		for(int i=0;i<listCityVo.size();i++){
+				        			if(listCityVo.get(i).getCity_name().trim().equals(cityName)){
+				        				note=note+listCityVo.get(i).getCityintro();
+				        			}
+				        		}
 				        		builder.setMessage(note);
 				        		builder.setTitle("导览信息");
 				        		builder.setNegativeButton("取消",

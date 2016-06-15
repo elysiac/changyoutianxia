@@ -2,6 +2,8 @@ package com.cy.util;
 
 import com.baidu.mapapi.SDKInitializer;
 import com.cy.maputil.LocationService;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import android.app.Application;
 import android.app.Service;
@@ -20,6 +22,12 @@ public class MyApplication extends Application{
         mVibrator =(Vibrator)getApplicationContext().getSystemService(Service.VIBRATOR_SERVICE);
 //        WriteLog.getInstance().init(); // 初始化日志
         SDKInitializer.initialize(getApplicationContext());  
+      //创建默认的ImageLoader配置参数  
+        ImageLoaderConfiguration configuration = ImageLoaderConfiguration  
+                .createDefault(this);  
+          
+        //Initialize ImageLoader with configuration.  
+        ImageLoader.getInstance().init(configuration);
     }  
 }  
 

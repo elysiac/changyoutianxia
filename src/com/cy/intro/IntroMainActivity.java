@@ -28,6 +28,34 @@ public class IntroMainActivity extends Activity {
 			public void onClick(View v) {
 				Intent intent = new Intent(IntroMainActivity.this,TrainIntroActivity.class);
 				startActivity(intent);
+				finish();
+//				overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
+			}
+		});
+		intro2_lay.setOnClickListener(new android.view.View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(IntroMainActivity.this,StationIntroActivity.class);
+				startActivity(intent);
+				finish();
+//				overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
+			}
+		});
+		intro3_lay.setOnClickListener(new android.view.View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(IntroMainActivity.this,CityIntroActivity.class);
+				startActivity(intent);
+				finish();
+//				overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
+			}
+		});
+		intro4_lay.setOnClickListener(new android.view.View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(IntroMainActivity.this,CaptureActivity.class);
+				startActivity(intent);
+				finish();
 //				overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
 			}
 		});

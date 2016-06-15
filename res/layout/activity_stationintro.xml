@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ebe5d9"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/title_blk"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="车站介绍"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <!-- 主题图片 -->
+
+    <com.cy.util.SlideShowView
+        android:id="@+id/slideshowView"
+        android:layout_width="fill_parent"
+        android:layout_height="180dp"
+        android:layout_centerHorizontal="true" />
+
+    <LinearLayout
+        android:id="@+id/list_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+         
+        >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.cy.util.CleanEditTextContent
+                android:id="@+id/searchField"
+                android:layout_width="270dp"
+                android:layout_height="33dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:layout_margin="3dp"
+                android:background="@drawable/shape"
+                android:drawableLeft="@drawable/search"
+                android:hint="请输入车站"
+                android:imeOptions="actionSearch"
+                android:maxLength="15"
+                android:singleLine="true"
+                android:textSize="18sp" >
+            </com.cy.util.CleanEditTextContent>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/listLay"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="5dp"
+            android:background="#ffffff" >
+
+            <RelativeLayout
+                android:id="@+id/listLay_in"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" >
+
+                <ListView
+                    android:id="@+id/cityList"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:cacheColorHint="#00000000"
+                    android:groupIndicator="@null"
+                    android:scrollbars="none" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+    <RelativeLayout
+        android:id="@+id/content_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+         >
+
+        <TextView
+            android:id="@+id/cityText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:gravity="center"
+            android:text="城市名"
+            android:textColor="#353130"
+            android:textSize="18sp" />
+
+        <ScrollView
+            android:id="@+id/SCROLLER_ID"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cityText"
+            android:layout_above="@+id/bttom_btn"
+            
+            android:fillViewport="true"
+            android:scrollbars="vertical" >
+
+            <TextView
+                android:id="@+id/contentText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center"
+                android:text="城市介绍"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+        </ScrollView>
+
+        <RelativeLayout
+            android:id="@+id/bttom_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true" >
+
+            <Button
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="25dp"
+                android:id="@+id/btn1"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@drawable/my_btn_gp"
+                android:text="周边商铺"
+                android:textColor="#353130"
+                android:textSize="16sp" />
+            
+            
+            <Button
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp"
+                android:id="@+id/btn2"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@drawable/my_btn_gp"
+                android:text="返回"
+                android:textColor="#353130"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

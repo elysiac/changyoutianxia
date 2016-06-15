@@ -28,6 +28,10 @@ public class CheciInfo {
 		String sql = "select * from "+dataTable2+" where checi is '"+checi+"'";
 		return getInformation2(sql);
 	}
+	public List<CheciItemVo> getCheciItemByCity(String checi,String cityName){
+		String sql = "select * from "+dataTable2+" where checi is '"+checi+"' and station is '"+cityName+"'";
+		return getInformation2(sql);
+	} 
 	
 	public List<CheciVo> getInfoAll(){
 		String sql = "select * from "+dataTable;
@@ -59,6 +63,7 @@ public class CheciInfo {
 			checiVo.setTo(cursor.getString(cursor.getColumnIndex("to")));
 			checiVo.setDuration(cursor.getString(cursor.getColumnIndex("duration")));
 			checiVo.setMileage(cursor.getString(cursor.getColumnIndex("mileage")));
+			checiVo.setIntro(cursor.getString(cursor.getColumnIndex("intro")));
 			listCheciVo.add(checiVo);
 		}
 		cursor.close();

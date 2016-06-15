@@ -21,7 +21,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/menu_station"
+                        android:src="@drawable/menu_train"
                         />
                     <TextView 
                         android:layout_width="wrap_content"
@@ -43,7 +43,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/menu_city"
+                        android:src="@drawable/menu_station"
                         />
                     <TextView 
                         android:layout_width="wrap_content"
@@ -65,7 +65,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/menu_ewm"
+                        android:src="@drawable/menu_city"
                         />
                     <TextView 
                         android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/menu_train"
+                        android:src="@drawable/menu_ewm"
                         />
                     <TextView 
                         android:layout_width="wrap_content"

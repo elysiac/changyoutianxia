@@ -30,7 +30,7 @@ public class GuideMenuActivity extends Activity{
 		guide2_lay.setOnClickListener(new android.view.View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent intent = new Intent(GuideMenuActivity.this,GuideMainActivity.class);
+				Intent intent = new Intent(GuideMenuActivity.this,PoiSearchActivity.class);
 				startActivity(intent);
 //				overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right);
 //				finish();

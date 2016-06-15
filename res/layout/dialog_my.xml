@@ -16,7 +16,6 @@
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content" >
-            
 
             <TextView
                 android:id="@+id/title"
@@ -26,17 +25,16 @@
                 android:gravity="center"
                 android:text="@string/title_alert"
                 android:visibility="visible" />
-            <ImageView 
+
+            <ImageView
+                android:id="@+id/close"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="5dp"
                 android:layout_centerVertical="true"
-                android:background="@android:drawable/ic_menu_close_clear_cancel"
-                android:adjustViewBounds="true" 
-                android:id="@+id/close"
-                />
-            
+                android:layout_marginRight="5dp"
+                android:adjustViewBounds="true"
+                android:background="@android:drawable/ic_menu_close_clear_cancel" />
         </RelativeLayout>
 
         <LinearLayout
@@ -45,18 +43,26 @@
             android:layout_height="wrap_content"
             android:gravity="center" >
 
-            <TextView
-                android:id="@+id/message"
-                style="@style/text_16_666666"
+            <ScrollView
+                android:id="@+id/SCROLLER_ID"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left|center"
-                android:lineSpacingMultiplier="1.5"
-                android:minHeight="120.0dip"
-                android:paddingBottom="15.0dip"
-                android:paddingLeft="20.0dip"
-                android:paddingRight="20.0dip"
-                android:paddingTop="15.0dip" />
+                android:fillViewport="true"
+                android:scrollbars="vertical" >
+
+                <TextView
+                    android:id="@+id/message"
+                    style="@style/text_16_666666"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center"
+                    android:lineSpacingMultiplier="1.5"
+                    android:minHeight="120.0dip"
+                    android:paddingBottom="15.0dip"
+                    android:paddingLeft="20.0dip"
+                    android:paddingRight="20.0dip"
+                    android:paddingTop="20.0dip" />
+            </ScrollView>
         </LinearLayout>
 
         <View

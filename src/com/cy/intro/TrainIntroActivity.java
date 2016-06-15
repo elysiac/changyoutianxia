@@ -22,7 +22,10 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.TextView.OnEditorActionListener;
@@ -36,6 +39,11 @@ public class TrainIntroActivity extends Activity {
 	private boolean isCheci=true;
 	CheciInfo checiInfo;
 	CleanEditTextContent searchField;
+	int index = 0;
+	LinearLayout listLayout;
+	RelativeLayout content_layout;
+	TextView checiText,contentText;
+	Button btn1,btn2,btn3;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -51,18 +59,55 @@ public class TrainIntroActivity extends Activity {
 		ListViewAdapter listViewAdapter = new ListViewAdapter(TrainIntroActivity.this); 
 		checiList.setAdapter(listViewAdapter);
 		
-		checiList.setOnItemClickListener(new OnItemClickListener(){
+		listLayout = (LinearLayout)findViewById(R.id.list_layout);
+		content_layout = (RelativeLayout)findViewById(R.id.content_layout);
+		checiText = (TextView)findViewById(R.id.checiText);
+		contentText = (TextView)findViewById(R.id.contentText);
+		btn1 = (Button)findViewById(R.id.btn1);
+		btn2 = (Button)findViewById(R.id.btn2);
+		btn3 = (Button)findViewById(R.id.btn3);
+		btn1.setOnClickListener(new android.view.View.OnClickListener() {
 			@Override
-			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
-					long arg3) {
-				// TODO Auto-generated method stub
-				int index=(Integer)arg1.getTag();
+			public void onClick(View v) {
 				CheciVo checiVo = listmap.get(index);
 				String checiName = checiVo.getCheci();
 				Intent intent = new Intent();
 				intent.putExtra("checi", checiName);
 				intent.setClass(TrainIntroActivity.this, CheciItemActivity.class);
 				TrainIntroActivity.this.startActivity(intent);
+			}
+		});
+		btn2.setOnClickListener(new android.view.View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+//				CheciVo checiVo = listmap.get(index);
+//				String checiName = checiVo.getCheci();
+				Intent intent = new Intent();
+//				intent.putExtra("checi", checiName);
+				intent.setClass(TrainIntroActivity.this, TrainMenuActivity.class);
+				TrainIntroActivity.this.startActivity(intent);
+			}
+		});
+		btn3.setOnClickListener(new android.view.View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				listLayout.setVisibility(View.VISIBLE);
+				content_layout.setVisibility(View.GONE);
+			}
+		});
+		
+		checiList.setOnItemClickListener(new OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				index=(Integer)arg1.getTag();
+				CheciVo checiVo = listmap.get(index);
+				String checiName = checiVo.getCheci();
+				String intro = checiVo.getIntro();
+				listLayout.setVisibility(View.GONE);
+				content_layout.setVisibility(View.VISIBLE);
+				checiText.setText(checiName);
+				contentText.setText(intro);
 			}
 		});
 	}
@@ -144,6 +189,7 @@ public class TrainIntroActivity extends Activity {
 			intent.setClass(TrainIntroActivity.this, GroupActivity.class);
 			TrainIntroActivity.this.startActivity(intent);
 			overridePendingTransition(R.anim.pull_in_left, R.anim.push_out_right); 
+			finish();
  			return true;
  		} else {
  			return super.onKeyDown(keyCode, event);

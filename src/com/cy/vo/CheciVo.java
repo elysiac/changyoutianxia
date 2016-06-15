@@ -1,7 +1,7 @@
 package com.cy.vo;
 
 public class CheciVo {
-	String id,checi,type,from,to,duration,mileage;
+	String id,checi,type,from,to,duration,mileage,intro;
 	public CheciVo()
 	{
 		
@@ -11,6 +11,12 @@ public class CheciVo {
 	}
 	public void setId(String id) {
 		this.id = id;
+	}
+	public String getIntro() {
+		return intro;
+	}
+	public void setIntro(String intro) {
+		this.intro = intro;
 	}
 	public String getCheci() {
 		return checi;
